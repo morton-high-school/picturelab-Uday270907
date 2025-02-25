@@ -16,6 +16,14 @@ public class PictureTester
     beach.zeroBlue();
     beach.explore();
   }
+
+  public static void testHighlightFish()
+  {
+    Picture water = new Picture("water.jpg");
+    water.explore();
+    water.highlightFish();
+    water.explore();
+  }
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
@@ -24,6 +32,22 @@ public class PictureTester
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
+  }
+
+  public static void testMirrorHorizontalBotToTop()
+  {
+    Picture caterpillar = new Picture("caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontalBotToTop();
+    caterpillar.explore();
+  }
+
+  public static void testMirrorDiagonal()
+  {
+    Picture beach = new Picture("beach.jpg");
+    beach.explore();
+    beach.mirrorDiagonal();
+    beach.explore();
   }
   
   /** Method to test mirrorTemple */
@@ -35,6 +59,22 @@ public class PictureTester
     temple.explore();
   }
   
+  public static void testMirrorArms()
+  {
+    Picture temple = new Picture("snowman.jpg");
+    temple.explore();
+    temple.mirrorArms();
+    temple.explore();
+  }
+
+  public static void testMirrorGull()
+  {
+    Picture temple = new Picture("seagull.jpg");
+    temple.explore();
+    temple.mirrorGull();
+    temple.explore();
+  }
+
   /** Method to test the collage method */
   public static void testCollage()
   {
@@ -42,12 +82,36 @@ public class PictureTester
     canvas.createCollage();
     canvas.explore();
   }
+
+  public static void testMyCollage()
+  {
+    Picture canvas = new Picture("640x480.jpg");
+    canvas.myCollage();
+    canvas.explore();
+  }
+
+  public static void testCopy(){
+    Picture temple = new Picture("snowman.jpg");
+    Picture snowman = new Picture("temple.jpg");
+    temple.explore();
+    temple.copy(snowman, 20, 0, 20, 20, 120, 460);
+    temple.explore();
+  }
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
     Picture swan = new Picture("swan.jpg");
+    swan.explore();
     swan.edgeDetection(10);
+    swan.explore();
+  }
+
+  public static void testEdgeDetection2()
+  {
+    Picture swan = new Picture("swan.jpg");
+    swan.explore();
+    swan.edgeDetection2(10);
     swan.explore();
   }
   
@@ -58,7 +122,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
+    //testZeroGreen(1);
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
@@ -66,14 +131,17 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
+    //testMirrorHorizontalBotToTop();
+    //testMirrorDiagonal();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
+    //testMyCollage();
     //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
+    testEdgeDetection();
+    testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
